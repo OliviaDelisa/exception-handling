@@ -46,14 +46,17 @@ class Transaksi extends Barang {
         System.out.println("Harga Barang   : " + currencyFormat.format(hargaBarang));
         System.out.println("Jumlah Beli    : " + jumlahBeli);
         System.out.println("Total Harga    : " + currencyFormat.format(total));
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Kasir  : IBUK KOS");
     }
 }
 
 // Main class
 public class Main {
-    public static void main(String[] args) {
+    public static void runTransaksi() {
         Scanner scanner = new Scanner(System.in); 
         boolean continueProgram = true; 
+        
         while (continueProgram) {
             try {
                 //input transaksi
@@ -124,7 +127,8 @@ public class Main {
             System.out.print("\nApakah Anda ingin melanjutkan transaksi? (Y/N): ");
             scanner.nextLine(); 
             String pilihan = scanner.nextLine();
-            if (!pilihan.equalsIgnoreCase("Y")) {
+            // menggunakan equals ignore case untuk mengabaikan huruf besar dan huruf kecil antara yang di set dengan yang diinputkan
+            if (!pilihan.equalsIgnoreCase("Y")) { 
                 continueProgram = false; 
             }
         }
